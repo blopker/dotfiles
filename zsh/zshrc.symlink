@@ -39,3 +39,9 @@ fi
 
 # load every completion after autocomplete loads
 for config_file ($ZSH/**/completion.zsh) source $config_file
+
+# Make the caps lock be a ctrl key
+setxkbmap -option ctrl:nocaps
+
+# Enable agent forwarding for ssh-agent
+zstyle :omz:plugins:ssh-agent agent-forwarding on
