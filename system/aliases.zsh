@@ -8,10 +8,9 @@ alias la='ls -A --color'
 alias ports="netstat -tulpn"
 
 # Open folder in current location
-manager_path=$(which thunar)
-if [[ -f $manager_path ]]
+if hash thunar
   then
-    alias o="$manager_path ./"
+    alias o="`which thunar` ./"
 fi
 
 # Get python to make a simple http server in current dir
