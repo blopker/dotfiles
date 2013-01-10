@@ -14,3 +14,5 @@ if [[ -f $manager_path ]]
     alias o="$manager_path ./"
 fi
 
+# Get python to make a simple http server in current dir
+alias server="python -m SimpleHTTPServer"
