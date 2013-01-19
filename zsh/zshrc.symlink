@@ -45,3 +45,6 @@ setxkbmap -option ctrl:nocaps
 
 # Enable agent forwarding for ssh-agent
 zstyle :omz:plugins:ssh-agent agent-forwarding on
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
