@@ -1,11 +1,3 @@
-# Use `hub` as our git wrapper:
-#   http://defunkt.github.com/hub/
-if hash hub 
-then
-  hub_path=$(which hub)
-  alias git=$hub_path
-fi
-
 # The rest of my fun git aliases
 alias gl='git pull --prune'
 alias glog="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
