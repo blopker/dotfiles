@@ -5,8 +5,8 @@
 [hub]
         protocol = https
 [user]
-        name = ninj0x
-        email = ninj0x@gmail.com
+        name = blopker
+        email = lopkerk@gmail.com
 [alias]
         co = checkout
         promote = !$DOT/bin/git-promote
