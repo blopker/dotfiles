@@ -8,7 +8,7 @@ alias la='ls -A --color'
 alias ports="netstat -tulpn"
 
 # Open folder in current location
-if hash thunar
+if hash thunar 2>/dev/null
   then
     alias o="`which thunar` ./"
 fi
