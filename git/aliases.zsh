@@ -12,4 +12,4 @@ alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias greset="git reset --hard"
 
 # http://gitignore.io/
-function gi() { curl http://gitignore.io/api/\$@ ;}
+function gi() { curl http://gitignore.io/api/$@ ;}
