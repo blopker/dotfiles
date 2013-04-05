@@ -1,7 +1,7 @@
 # The rest of my fun git aliases
 alias gl='git pull --prune'
 alias glog="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias gp='git push'
+alias gp='git push origin HEAD'
 alias gd='git diff'
 alias ga="git add -A"
 alias gc='git commit -am'
@@ -13,3 +13,4 @@ alias greset="git reset --hard"
 
 # http://gitignore.io/
 function gi() { curl http://gitignore.io/api/$@ ;}
+
