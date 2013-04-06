@@ -44,7 +44,7 @@ fi
 for config_file ($DOT/**/completion.zsh) source $config_file
 
 # Make the caps lock be a ctrl key
-setxkbmap -option ctrl:nocaps
+#setxkbmap -option ctrl:nocaps
 
 # Enable agent forwarding for ssh-agent
 zstyle :omz:plugins:ssh-agent agent-forwarding on
