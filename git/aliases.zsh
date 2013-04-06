@@ -3,7 +3,7 @@ alias gl='git pull --prune'
 alias glog="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gp='git push origin HEAD'
 alias gd='git diff'
-alias ga="git add -A"
+alias ga="git add --all :/"
 alias gc='git commit -am'
 alias gco='git checkout'
 alias gb='git branch'
