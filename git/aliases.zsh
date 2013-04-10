@@ -1,7 +1,7 @@
 # The rest of my fun git aliases
 alias gl='git pull --prune'
 alias glog="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias gp='git push origin HEAD'
+alias gp='git push origin HEAD --tags'
 alias gd='git diff'
 alias ga="git add --all :/"
 alias gc='git commit -am'

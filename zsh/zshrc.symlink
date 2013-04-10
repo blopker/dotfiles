@@ -52,6 +52,9 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# Add npm binary path for OS X
+export PATH="/usr/local/lib/node_modules:$PATH"
+
 # all of our zsh files
 typeset -U config_files
 config_files=($DOT/**/*.zsh)
