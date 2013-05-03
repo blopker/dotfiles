@@ -1,9 +1,9 @@
 [Desktop Entry]
 Name=Eclipse 
 Type=Application
-Exec=~/eclipse/eclipse
+Exec=/home/ninj0x/eclipse/eclipse
 Terminal=false
-Icon=~/eclipse/icon.xpm
+Icon=/home/ninj0x/eclipse/icon.xpm
 Comment=Integrated Development Environment
 NoDisplay=false
 Categories=Development;IDE
