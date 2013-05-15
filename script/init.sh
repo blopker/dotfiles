@@ -17,9 +17,10 @@ chmod 600 ~/.ssh/id_rsa
 
 echo "Installing extra fun stuff..."
 sudo add-apt-repository -y ppa:webupd8team/sublime-text-2
+sudo add-apt-repository -y ppa:chris-lea/node.js
 $APT update -y
 $APT upgrade -y
-$APT install -y vim build-essential sublime-text guake chromium-browser zsh curl wget default-jdk
+$APT install -y vim build-essential nodejs sublime-text guake chromium-browser zsh curl wget default-jdk
 
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
