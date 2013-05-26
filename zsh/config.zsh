@@ -1,5 +1,5 @@
 
-autoload -U $DOT/functions/*(:t)
+autoload -U $ZSH/functions/*(:t)
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000

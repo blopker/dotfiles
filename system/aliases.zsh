@@ -35,3 +35,6 @@ then
   alias ll="gls -l --color"
   alias la='gls -A --color'
 fi
+
+# Make directory and change into it.
+md (){ mkdir -p "$*"; cd "$*"; }

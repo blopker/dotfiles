@@ -1,2 +1,3 @@
 alias reload!='. ~/.zshrc'
-alias lic='cp $DOT/License LICENSE'
+alias lic='cp $ZSH/License LICENSE'
+
