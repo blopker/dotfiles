@@ -21,3 +21,9 @@ alias p4m='for file in `p4of`; do test ! -e $file && p4o | grep $file# | grep -v
 function p4ot() { echo; for c in $(p4 changes -s pending -c $(cat .p4config | cut -d= -f2) | cut -d' ' -f2); do p4 change -o $c | grep -C1 "Description:$" | sed "1,2d" | sed "s/\t/[$c] /"; p4o -c $c |     p4f | sed "s/\.\//    /"; echo; done; default=$(p4o -c default 2>/dev/null | p4f | sed "s/\.\//    /"); if [ $default ]; then echo '[default]'; echo $default; echo; fi; }
 
 function p4ocf() { p4 opened -c $1 | p4f }
+
+function watchbt(){
+  C=~/p4/current/
+  fswatch . "echo Updating..; rsync -rq --update $C pg1:p4/current; echo Updated."
+}
+
