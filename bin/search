@@ -5,4 +5,11 @@
 set -e
 
 # use -iru to search directories ack usually ignores (like .git)
-ack -i "${*:1}"
+
+if hash ack 2>/dev/null; then
+    ACK=ack
+else
+    ACK=ack-grep
+fi
+
+$ACK -i "${*:1}"
