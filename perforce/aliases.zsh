@@ -24,6 +24,10 @@ function p4ocf() { p4 opened -c $1 | p4f }
 
 function watchbt(){
   C=~/p4/current/
-  fswatch . "echo Updating..; rsync -rq --update $C pg1:p4/current; echo Updated."
+  echo "Watching $C...";
+  fswatch $C "echo -n 'Updating at ';
+  date +"%r";
+  rsync -riq --update $C pg1:p4/current;
+  echo Updated."
 }
 

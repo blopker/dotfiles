@@ -32,8 +32,8 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'git' \
   'ssh' \
+  'git' \
   'dpkg' \
   'node' \
   'ruby' \
