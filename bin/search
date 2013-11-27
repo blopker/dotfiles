@@ -12,4 +12,4 @@ else
     ACK=ack-grep
 fi
 
-$ACK -i "${*:1}"
+$ACK --ignore-case --literal --context -s "${*:1}"

@@ -55,10 +55,11 @@ done
 
 unset config_files
 
+# Init rbenv if installed
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 # Remap capslock to f12
 #setxkbmap -option caps:none && xmodmap -e "keycode 66 = F12"
-
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Work stuff
 export QA_PASSPHRASE="adenine"
