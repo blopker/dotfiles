@@ -55,12 +55,12 @@ set number                 " line numbers
 set wildmenu               " turn on wild menu
 set wildmode=list:longest,full
 set ch=2                   " command line height
-set backspace=2            " allow backspacing over everything in insert mode
+set backspace=indent,eol,start      " allow backspacing over everything in insert mode
 set whichwrap+=<,>,h,l,[,] " backspace and cursor keys wrap to
 set shortmess=filtIoOA     " shorten messages
 set report=0               " tell us about changes
 set nostartofline          " don't jump to the start of line when scrolling
-
+syntax on                  " Syntax highlighting
 
 " ----------------------------------------------------------------------------
 " Visual Cues
@@ -71,7 +71,7 @@ set mat=5                  " duration to show matching brace (1/10 sec)
 set incsearch              " do incremental searching
 set laststatus=2           " always show the status line
 set ignorecase             " ignore case when searching
-set nohlsearch             " don't highlight searches
+set hlsearch               " highlight searches
 set visualbell             " shut the fuck up
 
 
