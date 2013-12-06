@@ -1,20 +1,10 @@
 ## keybindings
 unbind C-b
-unbind C-a
-unbind % 
-unbind ,
-unbind .
-unbind n
-unbind p
-unbind [
-unbind '"'
-unbind l
-unbind &
-unbind "'"
+unbind C-x
 
-set-option -g prefix C-a # C-a for perfix just like screen
+set-option -g prefix C-x # C-a for perfix just like screen
 
-bind-key C-a    last-window
+bind-key C-x    last-window
 bind-key |      split-window -h
 bind-key \      split-window -h
 bind-key -      split-window -v

@@ -45,7 +45,44 @@ done
 
 unset config_files
 
-# Remap capslock to f12
-setxkbmap -option caps:none && xmodmap -e "keycode 66 = F12"
+# 23andMe Macros
+function m() {
+    showBt ;
+    if [ "Xclean" = "X${1}" ] ; then make clean >/dev/null ; shift ; fi
+      make && ${BUILDTOP}/tools/re/linkplayground.py && ${BUILDTOP}/tools/re/fixplayground.py \
+      && logIt ${BUILDTOP}/bake --exe "$@"
+}
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+function logIt() { OUTFILE=`date "+${HOME}/Logs/log_%y%m%d_%H%M%S.txt"`; (date; pwd; echo Running "$@"; time "$@" ; date) 2>&1 | tee -a ${OUTFILE} ; echo Output in ${OUTFILE} ; }
+
+function showBt() { env | grep -F 'PLAYGROUND
+PYTHONPATH
+BUILDTOP
+PROTECTED23'
+}
+
+function btop() {
+  try=`pwd`/./
+  if [ "X${try}" = "X${HOME}/./" ] ; then try=/workspace/${USER}/current-all/./ ; fi
+    while [ "X/" != "X${try}" ]
+      do
+        try=`dirname "${try}"`
+        if [ ! -d "${try}/tools" ] ; then continue; fi
+          if [ ! -d "${try}/websites" ] ; then continue; fi
+            if [ ! -d "${try}/lib23" ] ; then continue; fi
+              echo >&2 "Found BUILDTOP at ${try}"
+              echo "${try}"
+              break
+              done
+              if [ "X/" == "X${try}" ]                                                                          
+                then
+                echo >&2 "failed to find BUILDTOP from `pwd`"
+              fi
+}
+function spg() { a=${1:-1} ; if [ X1 = "X${a}" ] ; then a="" ; fi ; export PLAYGROUND=/kit23/site/${USER}${a}/; export PROTECTED23=$PLAYGROUND ; }
+function sbt() {
+    export BUILDTOP=`btop`
+    export PYTHONPATH="${BUILDTOP}:${HOME}/lib/python"
+    spg ${1}
+    showBt
+}
