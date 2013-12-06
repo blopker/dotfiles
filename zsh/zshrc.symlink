@@ -56,7 +56,7 @@ done
 unset config_files
 
 # Init rbenv if installed
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if hash rbenv 2> /dev/null; then eval "$(rbenv init -)"; fi
 
 # Remap capslock to f12
 #setxkbmap -option caps:none && xmodmap -e "keycode 66 = F12"
