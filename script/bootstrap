@@ -138,6 +138,8 @@ then
   else
     fail "error installing dependencies"
   fi
+  # Stupid .DS_Store files
+  defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 fi
 
 echo ''

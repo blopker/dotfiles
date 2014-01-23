@@ -64,9 +64,10 @@ if hash rbenv 2> /dev/null; then eval "$(rbenv init -)"; fi
 # Work stuff
 export QA_PASSPHRASE="adenine"
 export MOUNT=/Volumes/dev
+REMOTE=/workspace/blopker/ 
 # Make a mount point, mount the remote volume, and cd to the mount point
 mnt() {
-  mkdir -p $MOUNT && sshfs -o auto_cache,noappledouble,volname=dev pg1:/workspace/blopker/current-all/ $MOUNT && cd $MOUNT
+  mkdir -p $MOUNT && sshfs -o Ciphers=arcfour,Compression=no,auto_cache,reconnect,defer_permissions,noappledouble,volname=dev pg1:$REMOTE $MOUNT && cd $MOUNT
 }
 
 # Go back to home directory and un mount remote volume
