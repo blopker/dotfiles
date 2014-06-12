@@ -1,3 +1,0 @@
-Host pg1
-  HostName pg1
-  IdentityFile ~/.ssh/pg1_rsa
