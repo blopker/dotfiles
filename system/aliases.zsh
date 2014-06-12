@@ -12,9 +12,10 @@ md (){ mkdir -p "$*"; cd "$*"; }
 
 # Alias pbcopy from OSX
 if [ "$(uname -s)" != "Darwin" ]
-  then
-  alias pbcopy='xclip -selection clipboard'
+    then
+    alias pbcopy='xclip -selection clipboard'
 fi
 
 # scp, but zip it first.
 tarcp (){ tar czf - $1 | ssh $2 "cat > jdhkf837dsf.tar; tar xzf jdhkf837dsf.tar; rm jdhkf837dsf.tar" }
+
