@@ -11,6 +11,7 @@ alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias greset="git reset --hard"
 alias gfb='git checkout -t origin/master -b' # Create new feature branch.
+alias gg='git grep --color --show-function -n -C 2'
 
 # http://gitignore.io/
 function gi() { curl http://gitignore.io/api/$@ ;}

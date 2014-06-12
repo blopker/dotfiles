@@ -64,6 +64,8 @@ if hash pyenv 2> /dev/null; then eval "$(pyenv init -)"; fi
 # Remap capslock to f12
 #setxkbmap -option caps:none && xmodmap -e "keycode 66 = F12"
 
+alias iphone='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
+
 # Work stuff
 export QA_PASSPHRASE="adenine"
 export MOUNT=/Volumes/dev
@@ -75,5 +77,5 @@ mnt() {
 
 # Go back to home directory and un mount remote volume
 umt() {
-  cd && umount $MOUNT
+  cd && diskutil unmount force $MOUNT
 }
