@@ -1,6 +1,8 @@
 # Find out what ports are in use
 alias ports="netstat -tulpn"
 
+alias py='python'
+
 # Get python to make a simple http server in current dir
 alias server="python -m SimpleHTTPServer"
 
