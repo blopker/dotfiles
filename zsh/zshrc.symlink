@@ -40,7 +40,7 @@ unset config_files
 
 # Work stuff
 export MOUNT=/Volumes/dev
-HOST=pg1.corp.23andme.com
+HOST=pg2.corp.23andme.com
 REMOTE=/workspace/blopker/
 # Make a mount point, mount the remote volume, and cd to the mount point
 mnt() {
