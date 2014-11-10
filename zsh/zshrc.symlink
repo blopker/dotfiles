@@ -35,11 +35,6 @@ done
 
 unset config_files
 
-# Remap capslock to f12
-if [[ "$OSTYPE" != darwin* ]]; then
-  setxkbmap -option caps:none && xmodmap -e "keycode 66 = F12"
-fi
-
 # Work stuff
 export MOUNT=/Volumes/dev
 
