@@ -47,3 +47,8 @@ if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
 
+# Remap capslock to f12
+if [[ "$OSTYPE" != darwin* ]]; then
+  setxkbmap -option caps:none && xmodmap -e "keycode 66 = F12"
+fi
+
