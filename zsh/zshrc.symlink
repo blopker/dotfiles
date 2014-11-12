@@ -47,7 +47,7 @@ REMOTE=/workspace/blopker/
 # Make a mount point, mount the remote volume, and cd to the mount point
 mnt() {
   mkdir -p $MOUNT
-  sshfs -o Ciphers=arcfour,Compression=no,auto_cache,reconnect,defer_permissions,noappledouble,volname=dev $HOST:$REMOTE $MOUNT
+  sshfs -o Ciphers=arcfour,Compression=yes,auto_cache,reconnect,defer_permissions,noappledouble,volname=dev $HOST:$REMOTE $MOUNT
   cd $MOUNT
 }
 
