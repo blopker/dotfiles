@@ -5,7 +5,7 @@
 [hub]
         protocol = https
 [user]
-        name = blopker
+        name = Bo Lopker
         email = lopkerk@gmail.com
 [alias]
         promote = !$ZSH/bin/git-promote
@@ -30,9 +30,8 @@
 [help]
         autocorrect = 1
 [credential]
-	helper = cache --timeout=36000
+        helper = cache --timeout=36000
 [branch]
         autosetuprebase = always
-
 [push]
         default = tracking
