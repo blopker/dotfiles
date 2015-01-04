@@ -2,8 +2,8 @@
 My dot files. Initally forked from [Holmans](https://github.com/holman/dotfiles).
 
 ## install
-Install prezto first then run:
-
+Install zsh and run:
 ```bash
-script/bootstrap
+git clone https://github.com/blopker/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles && script/install.sh
 ```
