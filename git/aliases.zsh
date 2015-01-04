@@ -11,6 +11,6 @@ alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias gbrm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 alias gg="git grep --ignore-case --line-number --full-name --color --break --heading --context 2 --show-function"
 alias greset="git reset --hard"
-alias gfb='git checkout -t origin/master -b' # Create new feature branch.
+alias gfb='git checkout -b' # Create new feature branch.
 
 function gi() { curl -s https://www.gitignore.io/api/$@ ;}
