@@ -7,7 +7,7 @@ fi
 
 # OSX switch
 # Example:
-# if $ISOSX (or if [ -z $ISOSX ])
+# if [ $ISOSX ] (or if [ -z $ISOSX ])
 # 	then
 # 	do stuff
 # fi
