@@ -50,13 +50,13 @@ unset config_files
 # Work stuff
 export MOUNT=/Volumes/dev
 
-HOST=blopker@pg2.corp.23andme.com
-REMOTE=/workspace/blopker/
+REMOTEHOST=blopker@pg2.corp.23andme.com
+REMOTEDIR=/workspace/blopker/
 
 # Make a mount point, mount the remote volume, and cd to the mount point
 mnt() {
   mkdir -p $MOUNT
-  sshfs -o Ciphers=arcfour,Compression=yes,auto_cache,reconnect,defer_permissions,noappledouble,volname=dev $HOST:$REMOTE $MOUNT
+  sshfs -o Ciphers=arcfour,Compression=yes,auto_cache,reconnect,defer_permissions,noappledouble,volname=dev $REMOTEHOST:$REMOTEDIR $MOUNT
   cd $MOUNT
 }
 
