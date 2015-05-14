@@ -4,7 +4,7 @@
 
 [user]
         name = Bo Lopker
-        email = lopkerk@gmail.com
+        email = blopker@23andme.com
 [alias]
         count   = !git shortlog -sn
 [color]
