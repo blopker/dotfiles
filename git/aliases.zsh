@@ -12,6 +12,7 @@ alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias gg="git grep --ignore-case --line-number --full-name --color --break --heading --context 2 --show-function"
 alias greset="git reset --hard"
 alias gbrm=git-delete-local-merged
+alias gme="glog --author=\"Bo Lopker\""
 
 gfb() { git checkout -b feature/$1 } # Create new feature branch.
 gi() { curl -s https://www.gitignore.io/api/$@ ;}
