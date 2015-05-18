@@ -36,3 +36,24 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 # Show them dot files
 defaults write com.apple.finder AppleShowAllFiles -boolean true
+
+# Expanding the save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+
+# Setting trackpad & mouse speed to a reasonable number
+defaults write -g com.apple.trackpad.scaling 2
+defaults write -g com.apple.mouse.scaling 2.5
+
+# Requiring password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# Show all filename extensions in Finder by default
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Set Dock to auto-hide and remove the auto-hiding delay
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0
