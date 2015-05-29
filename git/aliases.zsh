@@ -14,5 +14,10 @@ alias greset="git reset --hard"
 alias gbrm=git-delete-local-merged
 alias gme="glog --author=\"Bo Lopker\""
 
-gfb() { git checkout -b feature/$1 } # Create new feature branch.
+# Create new feature branch.
+gfb() { 
+  git checkout -b feature/$1
+  git branch --set-upstream-to=origin/feature/$1 feature/$1
+} 
+
 gi() { curl -s https://www.gitignore.io/api/$@ ;}
