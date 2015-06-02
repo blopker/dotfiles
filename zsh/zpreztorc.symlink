@@ -31,7 +31,7 @@ zstyle ':prezto:load' pmodule \
   'directory' \
   'git' \
   'dpkg' \
-  'yum' \
+  'dnf' \
   'node' \
   'ssh' \
   'tmux' \
