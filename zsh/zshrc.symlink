@@ -7,13 +7,14 @@ fi
 
 # OSX switch
 # Example:
-# if [ $ISOSX ] (or if [ -z $ISOSX ])
+# if (($ISOSX)) (or if ((! $ISOSX)) )
 # 	then
 # 	do stuff
 # fi
+export ISOSX=0
 if [[ "$(uname -s)" == "Darwin" ]]
     then
-    export ISOSX='true'
+    export ISOSX=1
 fi
 
 # shortcut to this dotfiles path is $ZSH

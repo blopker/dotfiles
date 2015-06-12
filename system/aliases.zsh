@@ -13,9 +13,10 @@ sssh (){ ssh -t "$1" 'tmux attach || tmux new || screen -DR'; }
 md (){ mkdir -p "$*"; cd "$*"; }
 
 # Alias pbcopy from OSX
-if [ !$ISOSX ]
+if ((! $ISOSX))
     then
     alias pbcopy='xclip -selection clipboard'
+    echo 'hi'
 fi
 
 # scp, but zip it first.

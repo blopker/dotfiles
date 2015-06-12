@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+
+# Update EVERYTHING
+
+if (($ISOSX)); then
+  echo "Updating Homebrew"
+  brew update && brew upgrade --all
+fi
+
+if ((! $ISOSX)); then
+  echo "Updating Linux"
+  debU
+  dnfU
+fi
+
+echo "Updating dotfiles"
+cd ~/.dotfiles && git pull
+cd ~/.zprezto && git pull && git submodule update --init --recursive
