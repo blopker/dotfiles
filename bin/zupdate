@@ -9,8 +9,8 @@ fi
 
 if ((! $ISOSX)); then
   echo "Updating Linux"
-  debU
-  dnfU
+  sudo apt-get update && sudo apt-get upgrade -y
+  sudo dnf upgrade -y
 fi
 
 echo "Updating dotfiles"
