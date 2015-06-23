@@ -16,7 +16,6 @@ md (){ mkdir -p "$*"; cd "$*"; }
 if ((! $ISOSX))
     then
     alias pbcopy='xclip -selection clipboard'
-    echo 'hi'
 fi
 
 # scp, but zip it first.
