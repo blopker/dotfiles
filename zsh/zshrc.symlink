@@ -48,19 +48,3 @@ done
 
 unset config_files
 
-# Work stuff
-export MOUNT=/Volumes/dev
-
-# Make a mount point, mount the remote volume, and cd to the mount point
-mnt() {
-  REMOTEHOST=blopker@pg2.corp.23andme.com
-  REMOTEDIR=/workspace/blopker/
-  mkdir -p $MOUNT
-  sshfs -o Ciphers=arcfour,Compression=yes,auto_cache,reconnect,defer_permissions,noappledouble,volname=dev $REMOTEHOST:$REMOTEDIR $MOUNT
-  cd $MOUNT
-}
-
-# Go back to home directory and un mount remote volume
-umt() {
-  cd && diskutil unmount force $MOUNT
-}
