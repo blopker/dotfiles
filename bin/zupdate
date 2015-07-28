@@ -5,12 +5,9 @@
 if (($ISOSX)); then
   echo "Updating Homebrew"
   brew update && brew upgrade --all
-fi
-
-if ((! $ISOSX)); then
+else
   echo "Updating Linux"
-  debU
-  dnfU
+  sudo dnf upgrade -y
 fi
 
 echo "Updating dotfiles"
