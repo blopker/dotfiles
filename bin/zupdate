@@ -2,6 +2,11 @@
 
 # Update EVERYTHING
 
+echo "Updating dotfiles"
+cd ~/.dotfiles && git pull
+cd ~/.zprezto && git pull && git submodule update --init --recursive
+echo "Dot Done."
+
 if (($ISOSX)); then
   echo "Updating Homebrew"
   brew update && brew upgrade --all
@@ -10,6 +15,4 @@ else
   sudo dnf upgrade -y
 fi
 
-echo "Updating dotfiles"
-cd ~/.dotfiles && git pull
-cd ~/.zprezto && git pull && git submodule update --init --recursive
+echo "All done,"
