@@ -27,6 +27,7 @@
 [credential]
         helper = cache --timeout=36000
 [branch]
+        autosetupmerge = always
         autosetuprebase = always
 [push]
-        default = tracking
+        default = current
