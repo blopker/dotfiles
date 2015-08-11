@@ -15,9 +15,6 @@ alias gbrm=git-delete-local-merged
 alias gme="glog --author=\"Bo Lopker\""
 
 # Create new feature branch.
-gfb() { 
-  git checkout -b feature/$1
-  git push --set-upstream origin feature/$1
-} 
+gfb() { git checkout -b feature/$1; }
 
 gi() { curl -s https://www.gitignore.io/api/$@ ;}
