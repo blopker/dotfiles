@@ -1,6 +1,6 @@
 alias gl='git pull'
 alias gp='git push origin HEAD --tags'
-alias gf='git fetch --prune'
+alias gf='git fetch --all --prune'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gd='git diff'
 alias ga="git add --all :/"
