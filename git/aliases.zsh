@@ -1,5 +1,6 @@
 alias gl='git pull'
 alias gp='git push origin HEAD --tags'
+alias gf='git fetch --all --prune'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gd='git diff'
 alias ga="git add --all :/"
@@ -15,9 +16,6 @@ alias gbrm=git-delete-local-merged
 alias gme="glog --author=\"Bo Lopker\""
 
 # Create new feature branch.
-gfb() { 
-  git checkout -b feature/$1
-  git branch --set-upstream-to=origin/feature/$1 feature/$1
-} 
+gfb() { git checkout -b feature/$1; }
 
 gi() { curl -s https://www.gitignore.io/api/$@ ;}
