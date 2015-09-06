@@ -14,6 +14,13 @@ else
   echo "Updating Linux"
   sudo apt-get update && sudo apt-get upgrade -y
   sudo dnf upgrade -y
+  
+  # Update random repos
+  if [ -d "$HOME/.pyenv" ]; then
+    cd "$HOME/.pyenv" && git pull
+  fi
+
 fi
+
 
 echo "All done,"
