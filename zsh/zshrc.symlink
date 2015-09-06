@@ -40,8 +40,8 @@ do
   source $file
 done
 
-# load everything but the path and completion files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+# load everything but the path files
+for file in ${config_files:#*/path.zsh}
 do
   source $file
 done
