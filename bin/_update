@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+set -e
+
+# Update EVERYTHING
+
+echo "Updating dotfiles"
+cd ~/.dotfiles && git pull
+cd ~/.zprezto && git pull && git submodule update --init --recursive
+echo "Dot Done."
+
+if (($ISOSX)); then
+  	echo "Updating OSX"
+  	brew update && brew upgrade --all
+elif (( $+commands[apt-get] )) ; then
+  	echo "Updating Ubuntu"
+	sudo apt-get update && sudo apt-get upgrade -y
+elif (( $+commands[dnf] )) ; then
+  	echo "Updating Fedora"
+  	sudo dnf upgrade -y
+fi
+
+# Update random repos
+if [ -d "$HOME/.pyenv/.git" ]; then
+	cd "$HOME/.pyenv" && git pull
+fi
+
+echo "All done."
