@@ -5,6 +5,7 @@
 echo "Updating dotfiles"
 cd ~/.dotfiles && git pull
 cd ~/.zprezto && git pull && git submodule update --init --recursive
+. ~/.zshrc
 echo "Dot Done."
 
 if (($ISOSX)); then
@@ -14,7 +15,7 @@ else
   echo "Updating Linux"
   sudo apt-get update && sudo apt-get upgrade -y
   sudo dnf upgrade -y
-  
+
   # Update random repos
   if [ -d "$HOME/.pyenv" ]; then
     cd "$HOME/.pyenv" && git pull
