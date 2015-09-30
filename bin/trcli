@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# ~/.trcli looks like "name:pass"
 
 CMD="http://transmission_1:8080/transmission/rpc --auth `cat ~/.trcli`"
 if [ $# -eq 1 ]; then
