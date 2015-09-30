@@ -29,12 +29,9 @@ zstyle ':prezto:load' pmodule \
   'editor' \
   'history' \
   'directory' \
-  'git' \
   'dpkg' \
   'dnf' \
-  'node' \
   'ssh' \
-  'tmux' \
   'spectrum' \
   'utility' \
   'completion' \

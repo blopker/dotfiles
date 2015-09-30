@@ -1,3 +1,5 @@
+alias update="_update && reload!"
+
 # Find out what ports are in use
 alias ports="netstat -tulpn"
 
