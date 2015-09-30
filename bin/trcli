@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+CMD="http://transmission_1:8080/transmission/rpc --auth `cat ~/.trcli`"
+if [ $# -eq 1 ]; then
+	transmission-remote $CMD --add "$1"
+else
+	transmission-remote $CMD -l
+fi
