@@ -1,2 +1,2 @@
-alias vu='vagrant up && vagrant ssh'
+alias vu='vagrant up'
 alias vh='vagrant halt'
