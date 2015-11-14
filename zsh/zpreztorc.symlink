@@ -32,6 +32,7 @@ zstyle ':prezto:load' pmodule \
   'dpkg' \
   'dnf' \
   'ssh' \
+  'archive' \
   'spectrum' \
   'utility' \
   'completion' \
