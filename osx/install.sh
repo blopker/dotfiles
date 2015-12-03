@@ -13,6 +13,6 @@ then
 fi
 
 # Install homebrew packages
-brew install git vim zsh wget node rbenv ruby-build pyenv nvm
+brew install git vim zsh wget node rbenv ruby-build pyenv
 
 exit 0
