@@ -10,17 +10,21 @@ echo "Dot Done."
 
 if (($ISOSX)); then
   	echo "Updating OSX"
-  	brew update && brew upgrade --all
-elif (( $+commands[apt-get] )) ; then
+  	brew update
+  	brew upgrade --all
+  	brew cleanup
+elif (( $+commands[apt-get] )); then
   	echo "Updating Ubuntu"
-	sudo apt-get update && sudo apt-get upgrade -y
-elif (( $+commands[dnf] )) ; then
+	sudo apt-get update
+	sudo apt-get upgrade -y
+elif (( $+commands[dnf] )); then
   	echo "Updating Fedora"
   	sudo dnf upgrade -y
+    sudo dnf autoremove -y
 fi
 
-# Update random repos
-if [ -d "$HOME/.pyenv/.git" ]; then
+# Update other stuff
+if (( $+commands[pyenv] )); then
 	cd "$HOME/.pyenv" && git pull
 fi
 
