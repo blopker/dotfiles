@@ -9,19 +9,51 @@ cd ~/.zprezto && git pull && git submodule update --init --recursive
 echo "Dot Done."
 
 if (($ISOSX)); then
-  	echo "Updating OSX"
-  	brew update && brew upgrade --all
-elif (( $+commands[apt-get] )) ; then
-  	echo "Updating Ubuntu"
-	sudo apt-get update && sudo apt-get upgrade -y
-elif (( $+commands[dnf] )) ; then
-  	echo "Updating Fedora"
-  	sudo dnf upgrade -y
+  echo "Updating OSX"
+  brew update
+  brew upgrade --all
+  brew cleanup
+elif (( $+commands[apt-get] )); then
+  echo "Updating Ubuntu"
+  sudo apt-get update
+  sudo apt-get upgrade -y
+elif (( $+commands[dnf] )); then
+  echo "Updating Fedora"
+  sudo dnf upgrade -y
+  sudo dnf autoremove -y
+elif (( $+commands[yum] )); then
+  echo "Updating CentOS"
+  sudo yum upgrade -y
+  sudo yum autoremove -y
 fi
 
-# Update random repos
-if [ -d "$HOME/.pyenv/.git" ]; then
-	cd "$HOME/.pyenv" && git pull
+# Update other stuff
+if (( $+commands[pyenv] )); then
+  cd "$HOME/.pyenv" && git pull
 fi
+
+cat << "EOF"
+                                             ___
+                                          ,o88888
+                                       ,o8888888'
+                 ,:o:o:oooo.        ,8O88Pd8888"
+             ,.::.::o:ooooOoOoO. ,oO8O8Pd888'"
+           ,.:.::o:ooOoOoOO8O8OOo.8OOPd8O8O"
+          , ..:.::o:ooOoOOOO8OOOOo.FdO8O8"
+         , ..:.::o:ooOoOO8O888O8O,COCOO"
+        , . ..:.::o:ooOoOOOO8OOOOCOCO"
+         . ..:.::o:ooOoOoOO8O8OCCCC"o
+            . ..:.::o:ooooOoCoCCC"o:o
+            . ..:.::o:o:,cooooCo"oo:o:
+         `   . . ..:.:cocoooo"'o:o:::'
+         .`   . ..::ccccoc"'o:o:o:::'
+        :.:.    ,c:cccc"':.:.:.:.:.'
+      ..:.:"'`::::c:"'..:.:.:.:.:.'
+    ...:.'.:.::::"'    . . . . .'
+   .. . ....:."' `   .  . . ''
+ . . . ...."'
+ .. . ."'
+.
+EOF
 
 echo "All done."

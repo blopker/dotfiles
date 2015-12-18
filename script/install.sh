@@ -17,4 +17,3 @@ cd ~/.dotfiles && script/bootstrap
 chsh -s /bin/zsh
 
 echo "Done!"
-
