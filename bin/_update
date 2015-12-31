@@ -28,7 +28,7 @@ elif (( $+commands[yum] )); then
 fi
 
 # Update other stuff
-if (( $+commands[pyenv] )); then
+if [ -f "$HOME/.pyenv" ]; then
   cd "$HOME/.pyenv" && git pull
 fi
 
