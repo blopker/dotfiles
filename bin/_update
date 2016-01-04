@@ -12,7 +12,7 @@ if (($ISOSX)); then
   echo "Updating OSX"
   brew update
   brew upgrade --all
-  brew cleanup
+  brew cleanup --force
 elif (( $+commands[apt-get] )); then
   echo "Updating Ubuntu"
   sudo apt-get update
