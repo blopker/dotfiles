@@ -16,6 +16,7 @@ if (($ISOSX)); then
   brew update
   brew upgrade --all
   brew cleanup --force
+  softwareupdate --install --all
 elif (( $+commands[apt-get] )); then
   echo "Updating Ubuntu"
   sudo apt-get update
