@@ -15,6 +15,7 @@
 [core]
         excludesfile = ~/.gitignore
         editor = vim
+        untrackedCache = true
         rebase = true
 [apply]
         whitespace = nowarn
