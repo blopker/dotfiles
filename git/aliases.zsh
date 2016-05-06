@@ -1,19 +1,20 @@
-alias gl='git pull'
-alias gp='git push origin HEAD --tags'
-alias gf='git fetch --all --prune'
-alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
-alias gd='git diff'
 alias ga="git add --all :/"
 alias gam="git commit --amend -C HEAD"
+alias gb='git branch'
+alias gbrm=git-delete-local-merged
 alias gc='git commit -am'
 alias gco='git checkout'
-alias gb='git branch'
-alias gs='git status -sb'
-alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+alias gd='git diff'
+alias gf='git fetch --all --prune'
 alias gg="git grep --ignore-case --line-number --full-name --color --break --heading --context 2 --show-function"
-alias greset="git reset --hard"
-alias gbrm=git-delete-local-merged
+alias gl='git pull'
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gme="glog --author=\"Bo Lopker\""
+alias gp='git push origin HEAD --tags'
+alias greset="git reset --hard"
+alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+alias gs='git status -sb'
+alias gfind='git ls-files'
 
 # Create new feature branch.
 gfb() { git checkout -b feature/$1; }
