@@ -10,6 +10,9 @@ alias x='unarchive'
 # Find out what ports are in use
 alias ports="netstat -tulpn"
 
+# Spoof MAC address (ex spoof 00:00:00:00:00:00)
+alias spoof="sudo ifconfig en0 ether"
+
 # Make directory and change into it.
 md (){ mkdir -p "$*"; cd "$*"; }
 
