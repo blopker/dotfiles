@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# Delete all remote merged feature branches
+#
+
+git fetch --all
+git remote prune origin
+git branch -r --merged | grep -v "\*" | grep "feature/" | cut -f2- -d '/' | xargs -n 1 git push origin
+--delete
