@@ -6,6 +6,7 @@ alias c="cd $PROJECTS"
 alias rm='nocorrect rm'
 alias dot="cd $ZSH"
 alias x='unarchive'
+alias notes="e ~/Dropbox/notes"
 
 # Find out what ports are in use
 alias ports="netstat -tulpn"
