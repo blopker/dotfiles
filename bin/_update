@@ -1,9 +1,6 @@
 #!/usr/bin/env zsh
 set -e
 
-# Get that sudo now
-sudo -v
-
 # Update EVERYTHING
 
 echo "Updating dotfiles"
