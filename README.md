@@ -2,7 +2,7 @@
 My dot files. Initally forked from [Holmans](https://github.com/holman/dotfiles).
 
 ## install
-Run
+Run:
 ```
-make
+git clone https://github.com/blopker/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && make
 ```
