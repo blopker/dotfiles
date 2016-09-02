@@ -24,7 +24,7 @@ install_nvim_config () {
 }
 
 install_dotfiles () {
-  info 'installing dotfiles'
+  echo 'installing dotfiles'
 
   local overwrite_all=false backup_all=false skip_all=false
 
