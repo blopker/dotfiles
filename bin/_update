@@ -4,7 +4,7 @@ set -e
 # Update EVERYTHING
 
 echo "Updating dotfiles"
-cd ~/.dotfiles && git pull http master
+cd ~/.dotfiles && git pull
 cd ~/.zprezto && git pull && git submodule update --init --recursive
 echo "Dot Done."
 
