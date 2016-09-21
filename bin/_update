@@ -14,10 +14,10 @@ if (($ISOSX)); then
   brew upgrade --all
   brew cleanup --force
   softwareupdate --install --all
-elif (( $+commands[apt-get] )); then
+elif (( $+commands[apt] )); then
   echo "Updating Ubuntu"
-  sudo apt-get update
-  sudo apt-get upgrade -y
+  sudo apt update
+  sudo apt full-upgrade -y
 elif (( $+commands[dnf] )); then
   echo "Updating Fedora"
   sudo dnf upgrade -y
