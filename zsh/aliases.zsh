@@ -14,6 +14,8 @@ alias ports="netstat -tulpn"
 # Spoof MAC address (ex spoof 00:00:00:00:00:00)
 alias spoof="sudo ifconfig en0 ether"
 
+alias proxy="echo 'proxy at 127.0.0.1:3128' && ssh -D 3128 -CN kbl.io -p 3128"
+
 # Make directory and change into it.
 md (){ mkdir -p "$*"; cd "$*"; }
 
