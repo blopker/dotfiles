@@ -9,14 +9,14 @@ export PATH="$HOME/bin:$ZSH/bin:$PATH"
 
 # OSX switch
 # Example:
-# if (($ISOSX)) (or if ((! $ISOSX)) )
+# if (($ISMACOS)) (or if ((! $ISMACOS)) )
 # 	then
 # 	do stuff
 # fi
-export ISOSX=0
+export ISMACOS=0
 if [[ "$(uname -s)" == "Darwin" ]]
     then
-    export ISOSX=1
+    export ISMACOS=1
 fi
 
 # use .localrc for SUPER SECRET CRAP that you don't

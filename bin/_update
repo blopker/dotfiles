@@ -8,7 +8,7 @@ cd ~/.dotfiles && git pull
 cd ~/.zprezto && git pull && git submodule update --init --recursive
 echo "Dot Done."
 
-if (($ISOSX)); then
+if (($ISMACOS)); then
   echo "Updating OSX"
   brew update
   brew upgrade --all

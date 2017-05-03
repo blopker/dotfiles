@@ -20,10 +20,7 @@ alias proxy="echo 'proxy at 127.0.0.1:3128' && ssh -D 3128 -CN kbl.io -p 3128"
 md (){ mkdir -p "$*"; cd "$*"; }
 
 # Alias pbcopy from OSX
-if ((! $ISOSX))
+if ((! $ISMACOS))
     then
     alias pbcopy='xclip -selection clipboard'
 fi
-
-# scp, but zip it first.
-tarcp (){ TEMPNAME="`date +%s`.tar"; tar czf - $1 | ssh $2 "cat > $TEMPNAME; tar xzf $TEMPNAME; rm $TEMPNAME" }
