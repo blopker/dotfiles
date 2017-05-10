@@ -6,7 +6,7 @@ alias gc='git commit -am'
 alias gco='git checkout'
 alias gd='git diff'
 alias gf='git fetch --all --prune'
-alias gfind='git ls-files'
+alias ggf='git ls-files | grep'
 alias gg="git grep --ignore-case --line-number --full-name --color --break --heading --context 2 --show-function"
 alias gl='git pull'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
