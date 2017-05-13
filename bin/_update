@@ -10,8 +10,9 @@ echo "Dot Done."
 
 if (($ISMACOS)); then
   echo "Updating OSX"
+  brew analytics off
   brew update
-  brew upgrade --all
+  brew upgrade
   brew cleanup --force
   softwareupdate --install --all
 elif (( $+commands[apt] )); then
