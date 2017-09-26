@@ -8,7 +8,7 @@ set_git_urls () {
 	# Change dotfiles remote so I can push
 	git remote set-url origin $SSH_GIT
 	# Set up HTTP remote for easy pull
-	git remote add http $HTTP_GIT	
+	git remote add http $HTTP_GIT
 }
 
 install_prezto () {
@@ -17,7 +17,7 @@ install_prezto () {
 
   for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
       ln -sf "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-  done  
+  done
 }
 
 echo "Set up dotfiles..."
@@ -28,6 +28,9 @@ install_prezto
 
 echo "Running bootstrap..."
 ./script/bootstrap.sh
+
+echo "Setup SSH..."
+./ssh/setup.sh
 
 chsh -s /bin/zsh
 
