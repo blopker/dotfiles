@@ -13,7 +13,7 @@ if (($ISMACOS)); then
   brew analytics off
   brew update
   brew upgrade
-  brew cleanup --force
+  brew cleanup -s
   softwareupdate --install --all
 elif (( $+commands[apt] )); then
   echo "Updating Ubuntu"
