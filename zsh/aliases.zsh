@@ -12,7 +12,12 @@ alias notes="e ~/Google\ Drive/notes/"
 alias ports="netstat -tulpn"
 
 # Spoof MAC address (ex spoof 00:00:00:00:00:00)
-alias spoof="sudo ifconfig en0 ether"
+spoof(){
+   sudo ifconfig en0 ether "$1"
+   sudo ifconfig en0 down
+   sleep 1
+   sudo ifconfig en0 up
+}
 
 alias proxy="echo 'proxy at 127.0.0.1:3128' && ssh -D 3128 -CN kbl.io -p 3128"
 
