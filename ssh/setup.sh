@@ -3,5 +3,5 @@ set -ex
 
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
-cp ./config ~/.ssh/
+cp ./ssh/config ~/.ssh/
 chmod 600 ~/.ssh/config
