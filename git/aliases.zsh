@@ -24,4 +24,4 @@ gfb() { git checkout -b feature/$1; }
 
 # Generate a gitignore to stdout
 # gi linux,osx,python
-gi() { curl -s https://www.gitignore.io/api/$@ ;}
+gi() { curl -sL https://www.gitignore.io/api/$@ ;}
