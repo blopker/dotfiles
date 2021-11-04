@@ -59,6 +59,15 @@ export PATH=$PATH:$HOME/development/flutter/bin
 
 # tabtab source for packages
 # uninstall by removing these lines
-[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && source ~/.config/tabtab/__tabtab.zsh || true
 
-. /usr/local/opt/asdf/asdf.sh
+# Source asdf if installed
+[[ -f /usr/local/opt/asdf/asdf ]] && source /usr/local/opt/asdf/asdf.sh
+# Alternate location
+[[ -f /opt/homebrew/opt/asdf/libexec/asdf.sh ]] && source /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# Source cargo/rust if installed
+[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
+
+# Source brew is installed``
+[[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"

@@ -9,10 +9,13 @@
 if test ! $(which brew)
 then
   echo "Installing Homebrew for you."
-  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)" > /tmp/homebrew-install.log
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# Install homebrew packages
-brew install git vim zsh wget node pyenv
+brew analytics off
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-exit 0
+# Install homebrew packages
+brew install git vim zsh wget node gpg asdf
+
+asdf plugin-add python
