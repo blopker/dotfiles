@@ -1,6 +1,5 @@
 alias activate=". venv/bin/activate"
-alias venv="virtualenv venv && activate"
-alias venv3="python3 -m venv venv && activate"
+alias venv="python3 -m venv venv && activate"
 alias py="python"
-alias serve="python -m SimpleHTTPServer"
+alias serve="python3 -m http.server"
 alias rmpyc="find . -name \*.pyc -delete"
