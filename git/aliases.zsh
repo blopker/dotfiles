@@ -3,7 +3,6 @@ alias gam="git commit --amend -C HEAD"
 alias gb='git branch'
 alias gbrm=git-delete-local-merged
 alias gc='git commit -am'
-alias gco='git checkout'
 alias gcod='git checkout develop'
 alias gcom='git checkout main'
 alias gd='git diff'
@@ -18,6 +17,10 @@ alias gp='git push origin HEAD --tags'
 alias greset="git reset --hard"
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias gs='git status -sb'
+
+gco() {
+  git checkout "${@:-main}"
+}
 
 # Create new feature branch.
 gfb() { git checkout -b feature/$1; }
