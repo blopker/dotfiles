@@ -38,3 +38,5 @@
 	defaultBranch = main
 [merge]
 	conflictstyle = diff3
+[gpg]
+	format = ssh
