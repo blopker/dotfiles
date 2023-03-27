@@ -1,12 +1,9 @@
-alias reload!='. ~/.zshrc'
+alias reload='. ~/.zshrc'
 alias update="_update && reload!"
 alias lic="cp $ZSH/LICENSE LICENSE"
-alias as='alias | grep'
 alias c="cd $PROJECTS"
 alias rm='nocorrect rm'
-alias dot="cd $ZSH"
 alias x='unarchive'
-alias notes="e ~/Google\ Drive/notes/"
 
 # Find out what ports are in use
 alias ports="netstat -tulpn"
