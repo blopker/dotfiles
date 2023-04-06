@@ -1,4 +1,4 @@
-alias reload='. ~/.zshrc'
+alias reload!='. ~/.zshrc'
 alias update="_update && reload!"
 alias lic="cp $ZSH/LICENSE LICENSE"
 alias c="cd $PROJECTS"
