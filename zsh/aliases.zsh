@@ -9,7 +9,10 @@ alias x='unarchive'
 alias ports="netstat -tulpn"
 
 # Spoof MAC address (ex spoof 00:00:00:00:00:00)
+# Use Monitor Mode to capture packets. Need to disconnect from wifi.
+# 'dns' is a good packet filter
 spoof(){
+   echo "Disconnect from any wifi, do not turn off wifi"
    sudo ifconfig en0 ether "$1"
    sudo ifconfig en0 down
    sleep 1
