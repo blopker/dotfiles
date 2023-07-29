@@ -5,6 +5,12 @@ alias c="cd $PROJECTS"
 alias rm='nocorrect rm'
 alias x='unarchive'
 
+# Unalias e from the utilities module so we don't have to type '.' all the time.
+unalias e
+function e(){
+    ${(z)VISUAL:-${(z)EDITOR}} ${@:-.}
+}
+
 # Find out what ports are in use
 alias ports="netstat -tulpn"
 
