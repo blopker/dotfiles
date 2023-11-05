@@ -29,8 +29,6 @@ zstyle ':prezto:load' pmodule \
   'editor' \
   'history' \
   'directory' \
-  'dpkg' \
-  'dnf' \
   'ssh' \
   'archive' \
   'spectrum' \
@@ -38,8 +36,9 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'syntax-highlighting' \
   'history-substring-search' \
-  'prompt'
-
+  'prompt' \
+  'autosuggestions' \
+  'python'
 #
 # Editor
 #
@@ -158,3 +157,10 @@ zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
 
 # Auto start a session when Zsh is launched in a SSH connection.
 # zstyle ':prezto:module:tmux:auto-start' remote 'yes'
+
+#
+# Python
+#
+
+zstyle ':prezto:module:python' skip-virtualenvwrapper-init 'on'
+zstyle ':prezto:module:python:virtualenv' auto-switch 'yes'
