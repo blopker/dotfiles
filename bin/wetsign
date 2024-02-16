@@ -1,43 +1,134 @@
+#!/usr/bin/env python3
+import argparse
+import os
+import random
+import subprocess
+import tempfile
+from concurrent.futures import ProcessPoolExecutor
 
-#!/usr/bin/env bash
-# This script takes a PDF or list of PDFs and outputs a file(s)
-# named <file>_scanned.pdf that looks like it has been scanned
-#
-# Requires imagemagic and popper to be installed (brew install imagemagick poppler)
-#
-# Accepts: a list of files
-# Usage: ./<scriptfilename> pdf1.pdf pdf2.pdf
-#
-# To use as a macOS automator quick action you need to:
-# - Create a new quick action that receives files or folders
-# - Add a shell script
-# - Paste in this script
-set -e
 
-export PATH=/usr/local/bin:$PATH
-for file in "$@"; do
-  base=${file%.pdf}
-  base=$base"_scanned.pdf"
+def parse_page_ranges(page_ranges):
+    """Parse a string of page ranges into a list of individual pages."""
+    pages = []
+    for part in page_ranges.split(","):
+        if "-" in part:
+            start, end = map(int, part.split("-"))
+            pages.extend(range(start, end + 1))
+        else:
+            pages.append(int(part))
+    return pages
 
-  # Split PDF into pages
-  echo "Splitting $base into separate pages"
-  pdfseparate "$file" /tmp/fake-scan-split-%04d.pdf
 
-  # Loop over the pages
-  for splitFile in /tmp/fake-scan-split-*.pdf; do
-    splitFileBase=${splitFile%.pdf}
-    splitFileScanned=$splitFileBase"_scanned.pdf"
+def process_page(args):
+    split_file, output_file = args
+    # Slightly rotate page, add a bit of noise
+    rotation = random.choice(["-", ""]) + str(0.1 * random.randint(1, 8))
+    subprocess.run(
+        [
+            "convert",
+            "-density",
+            "130",
+            "-trim",
+            "-flatten",
+            split_file,
+            "-attenuate",
+            "0.2",
+            "+noise",
+            "Gaussian",
+            "-rotate",
+            rotation,
+            output_file,
+        ],
+        check=True,
+    )
+    print(f"Output page {split_file} to {output_file}")
 
-    # Slightly rotate page, add a bit of noise and output a flat pdf
-    convert -density 130 -trim -flatten "$splitFile" -attenuate 0.2 +noise Gaussian -rotate "$([ $((RANDOM % 2)) -eq 1 ] && echo -)0.$(($RANDOM % 8 + 1))" "$splitFileScanned"
-    echo "Output page $splitFileBase to $splitFileScanned"
-  done
 
-  # Combine the PDFs, add noise across the entire document, apply sharpening, convert to b&w, soften the blacks slightly
-  convert -density 130 $(ls -rt /tmp/fake-scan-split-*_scanned.pdf) -attenuate 0.2 +noise Multiplicative -sharpen 0x1.0 -colorspace Gray +level 15%,100% "$base"
-  echo "PDF re-combined to $base"
+def simulate_scanned_pdf(input_file, pages: list[int] | None = None):
+    base, _ = os.path.splitext(input_file)
+    output_file = f"{base}_scanned.pdf"
 
-  # Remove all the temporary PDFs
-  echo "Cleaning up"
-  rm /tmp/fake-scan-split-*.pdf
-done
+    print(f"Processing {input_file} into {output_file}")
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        # Split PDF into specified pages
+        print(f"Splitting {input_file} into specified pages")
+        split_files = []
+        if pages:
+            for page in pages:
+                split_file = f"{tmpdir}/fake-scan-split-{page:04d}.pdf"
+                subprocess.run(
+                    [
+                        "pdfseparate",
+                        "-f",
+                        str(page),
+                        "-l",
+                        str(page),
+                        input_file,
+                        split_file,
+                    ],
+                    check=True,
+                )
+                split_files.append(split_file)
+        else:
+            # If no pages specified, split the whole document
+            subprocess.run(
+                ["pdfseparate", input_file, f"{tmpdir}/fake-scan-split-%04d.pdf"],
+                check=True,
+            )
+            split_files = [
+                f"{tmpdir}/{file}"
+                for file in os.listdir(tmpdir)
+                if file.startswith("fake-scan-split-")
+            ]
+
+        # Process each page in parallel
+        with ProcessPoolExecutor() as executor:
+            executor.map(
+                process_page,
+                [
+                    (split_file, f"{split_file[:-4]}_scanned.pdf")
+                    for split_file in split_files
+                ],
+            )
+
+        scanned_files = [f"{split_file[:-4]}_scanned.pdf" for split_file in split_files]
+
+        # Combine and process the scanned pages
+        print("Re-combining pages and applying final touches")
+        subprocess.run(
+            ["convert", "-density", "130"]
+            + scanned_files
+            + [
+                "-attenuate",
+                "0.2",
+                "+noise",
+                "Multiplicative",
+                "-sharpen",
+                "0x1.0",
+                "-colorspace",
+                "Gray",
+                "+level",
+                "15%,100%",
+                output_file,
+            ],
+            check=True,
+        )
+
+        print(f"PDF re-combined to {output_file}")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Simulate scanning specific pages of a PDF file."
+    )
+    parser.add_argument(
+        "--pages", type=str, help='Pages and ranges to process, e.g., "1,3,5-7"'
+    )
+    parser.add_argument("input_file", type=str, help="Input PDF file")
+
+    args = parser.parse_args()
+    pages = None
+    if args.pages:
+        pages = parse_page_ranges(args.pages)
+    simulate_scanned_pdf(args.input_file, pages)
