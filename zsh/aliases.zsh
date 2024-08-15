@@ -4,6 +4,7 @@ alias lic="cp $ZSH/LICENSE LICENSE"
 alias c="cd $PROJECTS"
 alias rm='nocorrect rm'
 alias x='unarchive'
+alias sl='ls'
 
 # Unalias e from the utilities module so we don't have to type '.' all the time.
 unalias e

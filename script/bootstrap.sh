@@ -18,11 +18,6 @@ link_file () {
   success "linked $src to $dst"
 }
 
-install_nvim_config () {
-  mkdir -p ~/.config/nvim
-  link_file ~/.vimrc ~/.config/nvim/init.vim
-}
-
 install_dotfiles () {
   echo 'installing dotfiles'
 
@@ -33,8 +28,6 @@ install_dotfiles () {
     dst="$HOME/.$(basename "${src%.*}")"
     link_file "$src" "$dst"
   done
-
-  install_nvim_config
 }
 
 install_dotfiles

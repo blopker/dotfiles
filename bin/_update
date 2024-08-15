@@ -29,11 +29,6 @@ elif (( $+commands[yum] )); then
   sudo yum autoremove -y
 fi
 
-# Update other stuff
-if [ -f "$HOME/.pyenv" ]; then
-  cd "$HOME/.pyenv" && git pull
-fi
-
 cat << "EOF"
 ______ _____ _   _  _____ ___________
 |  _  \  _  | \ | ||  ___|___  /  _  |

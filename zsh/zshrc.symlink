@@ -44,9 +44,6 @@ done
 
 unset config_files
 
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -57,43 +54,11 @@ export PATH=$PATH:$HOME/development/flutter/bin
 export PATH=$PATH:$HOME/.pub-cache/bin
 
 
-
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/__tabtab.zsh ]] && source ~/.config/tabtab/__tabtab.zsh || true
-
 # Source cargo/rust if installed
 [[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
 # Source brew is installed``
 [[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Source asdf if installed
-[[ -f /usr/local/opt/asdf/asdf ]] && source /usr/local/opt/asdf/asdf.sh
-# Alternate location
-[[ -f /opt/homebrew/opt/asdf/libexec/asdf.sh ]] && source /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-## Completion scripts setup. Remove the following line to uninstall
-[[ -f $HOME/.dart-cli-completion/zsh-config.zsh ]] && . $HOME/.dart-cli-completion/zsh-config.zsh || true
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/blopker/development/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/blopker/development/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/blopker/development/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/blopker/development/google-cloud-sdk/completion.zsh.inc'; fi
-
-# bun completions
-[ -s "/Users/blopker/.bun/_bun" ] && source "/Users/blopker/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
 # Mise
 eval "$(mise activate zsh)"
-
-## [Completion]
-## Completion scripts setup. Remove the following line to uninstall
-[[ -f /Users/blopker/.dart-cli-completion/zsh-config.zsh ]] && . /Users/blopker/.dart-cli-completion/zsh-config.zsh || true
-## [/Completion]
-

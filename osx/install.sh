@@ -16,6 +16,4 @@ brew analytics off
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install homebrew packages
-brew install git vim zsh wget node gpg asdf
-
-asdf plugin-add python
+brew install git vim zsh wget gpg mise alacritty htop fd dust
