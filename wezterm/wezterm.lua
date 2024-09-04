@@ -20,6 +20,10 @@ config.window_frame = {
     font_size = 12,
 }
 
+-- Slightly transparent and blurred background
+config.window_background_opacity = 0.8
+config.macos_window_background_blur = 20
+
 config.window_close_confirmation = 'AlwaysPrompt'
 
 -- Table mapping keypresses to actions
@@ -40,7 +44,7 @@ config.keys = {
     -- Tab navigation
     { key = 'RightArrow', mods = 'SUPER', action = act.ActivateTabRelative(1) },
     { key = 'LeftArrow', mods = 'SUPER', action = act.ActivateTabRelative(-1) },
-    
+
     -- Open config file
     {
         key = ',',
@@ -60,10 +64,10 @@ config.keys = {
     { key = 'w', mods = 'SUPER|SHIFT', action = act.CloseCurrentTab({confirm = false}) },
 
     -- Pane navigation
-    { key = 'UpArrow', mods = 'SUPER', action = act.ActivatePaneDirection 'Up', },
-    { key = 'DownArrow', mods = 'SUPER', action = act.ActivatePaneDirection 'Down', },
-    { key = 'LeftArrow', mods = 'SUPER', action = act.ActivatePaneDirection 'Left', },
-    { key = 'RightArrow', mods = 'SUPER', action = act.ActivatePaneDirection 'Right', }, 
+    { key = 'UpArrow', mods = 'SUPER|SHIFT', action = act.ActivatePaneDirection 'Up', },
+    { key = 'DownArrow', mods = 'SUPER|SHIFT', action = act.ActivatePaneDirection 'Down', },
+    { key = 'LeftArrow', mods = 'SUPER|SHIFT', action = act.ActivatePaneDirection 'Left', },
+    { key = 'RightArrow', mods = 'SUPER|SHIFT', action = act.ActivatePaneDirection 'Right', },
     { key = '\\', mods = 'SUPER', action = act.SplitVertical, },
     { key = '|', mods = 'SUPER', action = act.SplitHorizontal, },
 
