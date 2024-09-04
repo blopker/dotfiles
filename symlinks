@@ -1,0 +1,12 @@
+git/gitconfig .gitconfig
+git/gitignore .gitignore
+
+vim/vimrc.vim .vimrc
+
+wezterm/wezterm.lua .wezterm.lua
+
+zsh/zlogin.zsh .zlogin
+zsh/zpreztorc.zsh .zpreztorc
+zsh/zprofile.zsh .zprofile
+zsh/zshenv.zsh .zshenv
+zsh/zshrc.zsh .zshrc

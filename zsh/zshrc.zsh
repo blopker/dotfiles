@@ -28,13 +28,7 @@ fi
 
 # all of our zsh files
 typeset -U config_files
-config_files=($ZSH/**/*.zsh)
-
-# load the path files
-for file in ${(M)config_files:#*/path.zsh}
-do
-  source $file
-done
+config_files=($ZSH/**/init.zsh)
 
 # load everything but the path files
 for file in ${config_files:#*/path.zsh}
@@ -44,16 +38,6 @@ done
 
 unset config_files
 
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-export PATH=$PATH:$HOME/development/flutter/bin
-export PATH=$PATH:$HOME/.pub-cache/bin
-
-
 # Source cargo/rust if installed
 [[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
@@ -62,3 +46,6 @@ export PATH=$PATH:$HOME/.pub-cache/bin
 
 # Mise
 eval "$(mise activate zsh)"
+
+# Wezterm
+source "$ZSH/wezterm/wezterm.sh"

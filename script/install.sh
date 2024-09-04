@@ -26,8 +26,8 @@ set_git_urls
 echo "Set up Prezto..."
 install_prezto
 
-echo "Running bootstrap..."
-./script/bootstrap.sh
+echo "Running install_symlinks.sh symlinks..."
+./script/install_symlinks.sh symlinks
 
 echo "Setup SSH..."
 ./ssh/setup.sh

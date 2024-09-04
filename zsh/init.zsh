@@ -7,7 +7,7 @@ alias x='unarchive'
 alias sl='ls'
 
 # Unalias e from the utilities module so we don't have to type '.' all the time.
-unalias e
+unalias e 2>/dev/null
 function e(){
     ${(z)VISUAL:-${(z)EDITOR}} ${@:-.}
 }
