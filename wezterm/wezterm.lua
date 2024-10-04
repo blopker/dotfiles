@@ -9,7 +9,7 @@ wezterm.on('gui-startup', function()
   window:gui_window():toggle_fullscreen()
  end)
 
-config.color_scheme = 'Atom (Gogh)'
+config.color_scheme = 'iTerm2 Pastel Dark Background'
 config.font_size = 20
 config.font = wezterm.font 'Monaco'
 
@@ -21,7 +21,7 @@ config.window_frame = {
 }
 
 -- Slightly transparent and blurred background
-config.window_background_opacity = 0.8
+config.window_background_opacity = 0.9
 config.macos_window_background_blur = 20
 
 config.window_close_confirmation = 'AlwaysPrompt'
