@@ -15,7 +15,7 @@ fi
 #
 
 export EDITOR='vim'
-export VISUAL='code'
+export VISUAL='zed'
 export PAGER='less'
 
 #
