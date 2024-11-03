@@ -55,3 +55,6 @@ source "$ZSH/wezterm/wezterm.sh"
 [[ -f /Users/blopker/.dart-cli-completion/zsh-config.zsh ]] && . /Users/blopker/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
+
+# bun completions
+[ -s "/Users/blopker/.bun/_bun" ] && source "/Users/blopker/.bun/_bun"

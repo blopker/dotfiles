@@ -16,4 +16,5 @@ brew analytics off
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install homebrew packages
-brew install git vim zsh wget gpg mise alacritty htop fd dust
+brew install git vim zsh wget gpg mise htop fd dust miniserve
+brew install --cask wezterm
