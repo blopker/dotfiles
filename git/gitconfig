@@ -41,3 +41,5 @@
 	conflictstyle = diff3
 [gpg]
 	format = ssh
+[commit]
+	gpgsign = true
