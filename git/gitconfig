@@ -5,6 +5,7 @@
 [user]
         name = Bo Lopker
         email = lopkerk@gmail.com
+	signingkey = /Users/blopker/.ssh/id_ed25519
 [alias]
         count   = !git shortlog -sn
 [color]
