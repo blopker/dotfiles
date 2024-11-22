@@ -6,6 +6,7 @@ alias rm='nocorrect rm'
 alias x='unarchive'
 alias sl='ls'
 alias dot='cd $ZSH'
+alias m='make'
 
 # Unalias e from the utilities module so we don't have to type '.' all the time.
 unalias e 2>/dev/null

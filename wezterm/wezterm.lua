@@ -13,6 +13,7 @@ config.max_fps = 120
 config.color_scheme = 'iTerm2 Pastel Dark Background'
 config.font_size = 20
 config.font = wezterm.font 'Monaco'
+config.audible_bell = 'Disabled'
 
 config.window_decorations = 'RESIZE'
 
