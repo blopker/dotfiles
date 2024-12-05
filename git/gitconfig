@@ -3,43 +3,48 @@
 # You probably want to change the [user] section here since you are not me.
 
 [user]
-        name = Bo Lopker
-        email = lopkerk@gmail.com
-	signingkey = /Users/blopker/.ssh/id_ed25519
+    name = Bo Lopker
+    email = lopkerk@gmail.com
+    signingkey = /Users/blopker/.ssh/id_ed25519
 [alias]
-        count   = !git shortlog -sn
+    count   = !git shortlog -sn
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
 [core]
-        excludesfile = ~/.gitignore
-        editor = vim
-        untrackedCache = true
-        rebase = true
+    excludesfile = ~/.gitignore
+    editor = vim
+    pager = delta
+    untrackedCache = true
+    rebase = true
 [apply]
-        whitespace = nowarn
+    whitespace = nowarn
 [mergetool]
-        keepBackup = false
+    keepBackup = false
 [difftool]
-        prompt = false
+    prompt = false
 [help]
-        autocorrect = 1
+    autocorrect = 1
 [credential]
-        helper = cache --timeout=36000
+    helper = cache --timeout=36000
 [branch]
-        autosetupmerge = always
-        autosetuprebase = always
+    autosetupmerge = always
+    autosetuprebase = always
 [push]
-        default = current
+    default = current
 [pull]
-	rebase = false
+    rebase = false
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [merge]
-	conflictstyle = diff3
+    conflictstyle = zdiff3
 [gpg]
-	format = ssh
+    format = ssh
 [commit]
-	gpgsign = true
+    gpgsign = true
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
