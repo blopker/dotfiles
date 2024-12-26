@@ -1,50 +1,47 @@
-# Sample gitconfig
-#
-# You probably want to change the [user] section here since you are not me.
-
-[user]
-    name = Bo Lopker
-    email = lopkerk@gmail.com
-    signingkey = /Users/blopker/.ssh/id_ed25519
 [alias]
-    count   = !git shortlog -sn
-[color]
-    diff = auto
-    status = auto
-    branch = auto
-    ui = true
-[core]
-    excludesfile = ~/.gitignore
-    editor = vim
-    pager = delta
-    untrackedCache = true
-    rebase = true
+        count = !git shortlog -sn
 [apply]
-    whitespace = nowarn
-[mergetool]
-    keepBackup = false
-[difftool]
-    prompt = false
-[help]
-    autocorrect = 1
-[credential]
-    helper = cache --timeout=36000
+        whitespace = nowarn
 [branch]
-    autosetupmerge = always
-    autosetuprebase = always
-[push]
-    default = current
-[pull]
-    rebase = false
-[init]
-    defaultBranch = main
-[merge]
-    conflictstyle = zdiff3
-[gpg]
-    format = ssh
+        autosetupmerge = always
+        autosetuprebase = always
+[color]
+        branch = auto
+        diff = auto
+        status = auto
+        ui = true
 [commit]
-    gpgsign = true
-[interactive]
-    diffFilter = delta --color-only
+        gpgsign = true
+[core]
+        editor = vim
+        excludesfile = ~/.gitignore
+        pager = delta
+        rebase = true
+        untrackedCache = true
+[credential]
+        helper = cache --timeout=36000
 [delta]
-    navigate = true
+        line-numbers = true
+        navigate = true
+[difftool]
+        prompt = false
+[gpg]
+        format = ssh
+[help]
+        autocorrect = 1
+[init]
+        defaultBranch = main
+[interactive]
+        diffFilter = delta --color-only
+[merge]
+        conflictstyle = zdiff3
+[mergetool]
+        keepBackup = false
+[pull]
+        rebase = false
+[push]
+        default = current
+[user]
+        email = lopkerk@gmail.com
+        name = Bo Lopker
+        signingkey = /Users/blopker/.ssh/id_ed25519
