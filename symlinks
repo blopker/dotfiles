@@ -3,7 +3,7 @@ git/gitignore .gitignore
 
 vim/vimrc.vim .vimrc
 
-wezterm/wezterm.lua .wezterm.lua
+ghostty/config .config/ghostty/config
 
 zsh/zlogin.zsh .zlogin
 zsh/zpreztorc.zsh .zpreztorc

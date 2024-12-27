@@ -1,0 +1,25 @@
+# The syntax is "key = value". The whitespace around the
+# equals doesn't matter.
+background = 000000
+background-opacity = 0.8
+background-blur-radius = 20
+
+window-theme = dark
+quit-after-last-window-closed=true
+macos-titlebar-style=tabs
+auto-update=off
+
+copy-on-select = true
+
+# Comments start with a `#` and are only valid on their own line.
+# Blank lines are ignored!
+
+keybind = ctrl+z=close_surface
+keybind = ctrl+d=new_split:right
+
+font-family = Monaco
+font-size = 20
+
+# Keybind
+keybind = cmd+left=previous_tab
+keybind = cmd+right=next_tab

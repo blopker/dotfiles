@@ -47,9 +47,6 @@ unset config_files
 # Mise
 eval "$(mise activate zsh)"
 
-# Wezterm
-source "$ZSH/wezterm/wezterm.sh"
-
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /Users/blopker/.dart-cli-completion/zsh-config.zsh ]] && . /Users/blopker/.dart-cli-completion/zsh-config.zsh || true
