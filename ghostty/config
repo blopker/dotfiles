@@ -8,6 +8,7 @@ window-theme = dark
 quit-after-last-window-closed=true
 macos-titlebar-style=tabs
 auto-update=off
+theme = "iTerm2 Pastel Dark Background"
 
 copy-on-select = true
 
