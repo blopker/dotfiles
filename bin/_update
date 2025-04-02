@@ -14,7 +14,6 @@ if (($ISMACOS)); then
   brew update
   brew upgrade
   brew cleanup -s
-  softwareupdate --install --all
 elif (( $+commands[apt] )); then
   echo "Updating Ubuntu"
   sudo apt update
@@ -27,6 +26,16 @@ elif (( $+commands[yum] )); then
   echo "Updating CentOS"
   sudo yum upgrade -y
   sudo yum autoremove -y
+fi
+
+# Update rust if installed
+if (( $+commands[rustup] )); then
+  rustup update
+fi
+
+# Update Flutter if installed
+if (( $+commands[flutter] )); then
+  flutter upgrade
 fi
 
 cat << "EOF"

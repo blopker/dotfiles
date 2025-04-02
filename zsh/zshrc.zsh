@@ -6,6 +6,7 @@ fi
 export PROJECTS=~/code
 export ZSH=$HOME/.dotfiles
 export PATH="$HOME/bin:$ZSH/bin:$PATH"
+export PATH="/opt/homebrew/opt/uutils-coreutils/libexec/uubin:$PATH"
 
 # OSX switch
 # Example:
