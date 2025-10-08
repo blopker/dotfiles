@@ -42,7 +42,7 @@ unset config_files
 # Source cargo/rust if installed
 [[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
-# Source brew is installed``
+# Source brew if installed
 [[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Mise
@@ -52,7 +52,6 @@ eval "$(mise activate zsh)"
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /Users/blopker/.dart-cli-completion/zsh-config.zsh ]] && . /Users/blopker/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
-
 
 # bun completions
 [ -s "/Users/blopker/.bun/_bun" ] && source "/Users/blopker/.bun/_bun"
