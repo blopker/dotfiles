@@ -56,3 +56,8 @@ eval "$(mise activate zsh)"
 
 # bun completions
 [ -s "/Users/blopker/.bun/_bun" ] && source "/Users/blopker/.bun/_bun"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/blopker/.lmstudio/bin"
+# End of LM Studio CLI section
+

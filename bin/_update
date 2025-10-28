@@ -35,7 +35,7 @@ fi
 
 # Update Flutter if installed
 if (( $+commands[flutter] )); then
-  flutter upgrade
+  flutter upgrade --force
 fi
 
 cat << "EOF"
