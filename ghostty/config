@@ -8,8 +8,8 @@ window-theme = dark
 quit-after-last-window-closed=true
 macos-non-native-fullscreen = true
 macos-titlebar-style=tabs
-auto-update=off
 theme = "Atom"
+cursor-click-to-move = true
 
 copy-on-select = true
 
@@ -20,6 +20,7 @@ keybind = ctrl+z=close_surface
 keybind = ctrl+d=new_split:right
 
 font-family = Monaco
+
 font-size = 20
 font-feature = -liga
 
@@ -27,3 +28,4 @@ font-feature = -liga
 keybind = cmd+left=previous_tab
 keybind = cmd+right=next_tab
 keybind = control+d=unbind
+keybind = shift+enter=text:\x1b\r

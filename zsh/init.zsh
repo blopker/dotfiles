@@ -14,6 +14,19 @@ function e(){
     ${(z)VISUAL:-${(z)EDITOR}} ${@:-.}
 }
 
+# Transfer file to remote via base64 paste-string
+termcopy() {
+  if [[ -f "$1" ]]; then
+    local filename=$(basename "$1")
+    # Use openssl for a clean, single-line string to avoid terminal wrap issues
+    echo "echo '$(openssl base64 -A < "$1")' | base64 -d > $filename" | pbcopy
+    echo "✅ Command for '$filename' is in your clipboard."
+  else
+    echo "❌ Error: File '$1' not found."
+    return 1
+  fi
+}
+
 # Find out what ports are in use
 alias ports="netstat -tulpn"
 
