@@ -46,7 +46,10 @@ unset config_files
 [[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Mise
-eval "$(mise activate zsh)"
+[[ -f /opt/homebrew/bin/mise ]] && eval "$(mise activate zsh)"
+
+# Pearls
+#eval "$(pearl completions zsh)"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
@@ -57,6 +60,7 @@ eval "$(mise activate zsh)"
 [ -s "/Users/blopker/.bun/_bun" ] && source "/Users/blopker/.bun/_bun"
 
 # Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/blopker/.lmstudio/bin"
+#export PATH="$PATH:/Users/blopker/.lmstudio/bin"
 # End of LM Studio CLI section
 
+export CLAUDE_CODE_DISABLE_AUTO_MEMORY=1
