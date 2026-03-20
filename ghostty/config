@@ -29,3 +29,5 @@ keybind = cmd+left=previous_tab
 keybind = cmd+right=next_tab
 keybind = control+d=unbind
 keybind = shift+enter=text:\x1b\r
+# Global visibility
+keybind = global:f19=toggle_visibility
