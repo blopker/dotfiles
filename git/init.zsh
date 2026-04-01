@@ -90,3 +90,24 @@ open_github_pr() {
 
 # Create an alias
 alias gpr='open_github_pr'
+
+# Clone a repo into ~/code and cd into it
+# Usage: gclone <url|user/repo|repo>
+gclone() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: gclone <url|user/repo|repo>"
+    return 1
+  fi
+
+  local clone_url
+  if [[ "$1" == *://* || "$1" == git@*:* ]]; then
+    clone_url="$1"
+  elif [[ "$1" == */* ]]; then
+    clone_url="git@github.com:$1.git"
+  else
+    clone_url="git@github.com:blopker/$1.git"
+  fi
+
+  local repo_name=$(basename "${clone_url%.git}")
+  git clone "$clone_url" ~/code/"$repo_name" && cd ~/code/"$repo_name"
+}
