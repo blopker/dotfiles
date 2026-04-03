@@ -64,3 +64,7 @@ unset config_files
 # End of LM Studio CLI section
 
 export CLAUDE_CODE_DISABLE_AUTO_MEMORY=1
+
+# Forge code agent
+export FORGE_TRACKER=false
+export FORGE_EDITOR="vim"
