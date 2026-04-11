@@ -28,7 +28,6 @@ zstyle ':prezto:load' pmodule \
   'editor' \
   'history' \
   'directory' \
-  'ssh' \
   'archive' \
   'spectrum' \
   'utility' \
@@ -57,13 +56,6 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 # Auto set to 'off' on dumb terminals.
 zstyle ':prezto:module:prompt' theme 'pure'
 zstyle ':prezto:module:prompt' managed 'yes'
-
-#
-# SSH
-#
-
-# Set the SSH identities to load into the agent.
-zstyle ':prezto:module:ssh:load' identities 'id_ed25519' 'id_rsa'
 
 #
 # Syntax Highlighting

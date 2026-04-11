@@ -233,9 +233,9 @@ echo ""
 echo "Disable the over-the-top focus ring animation"
 defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
 
-echo ""
-echo "Hide the menu bar?"
-defaults write "Apple Global Domain" "_HIHideMenuBar" 1
+# echo ""
+# echo "Hide the menu bar?"
+# defaults write "Apple Global Domain" "_HIHideMenuBar" 1
 
 echo ""
 echo "Set Dock to auto-hide and remove the auto-hiding delay"
