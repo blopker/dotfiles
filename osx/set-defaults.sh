@@ -46,7 +46,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # To reset to default: defaults -currentHost delete -globalDomain NSStatusItemSpacing
 echo ""
 echo "Less spacing between tray icons"
-defaults -currentHost write -globalDomain NSStatusItemSpacing -int x
+defaults -currentHost write -globalDomain NSStatusItemSpacing -int 10
 
 defaults write com.apple.systemuiserver menuExtras -array \
   "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \

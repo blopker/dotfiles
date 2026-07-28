@@ -62,7 +62,3 @@ unset config_files
 # Added by LM Studio CLI (lms)
 #export PATH="$PATH:/Users/blopker/.lmstudio/bin"
 # End of LM Studio CLI section
-
-# Forge code agent
-export FORGE_TRACKER=false
-export FORGE_EDITOR="vim"
